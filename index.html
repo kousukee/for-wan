@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For wan | 愛犬のための手作りごはんレシピ</title>
+  <meta name="description" content="ペット管理栄養士 × ペット食育指導士が設計する、愛犬のための手作りごはんレシピサイト。AAFCO基準・ヒューマングレード・旬の食材で、栄養バランスの取れたレシピを無料公開。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="For wan | 愛犬のための手作りごはんレシピ">
+  <meta property="og:description" content="ペット管理栄養士が設計する、愛犬のための手作りごはんレシピを無料公開。AAFCO基準の栄養設計で安心。">
+  <meta property="og:site_name" content="For wan">
+  <meta property="og:locale" content="ja_JP">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #F4EEE2;
+      --paper-deep: #EBE2D0;
+      --ink: #2C2620;
+      --ink-soft: #5A4F42;
+      --ink-mute: #8A7E6E;
+      --rule: #C9BDA6;
+      --accent: #7A5A3A;
+      --leaf: #5E6B4A;
+      --font-heading: 'Shippori Mincho', 'Noto Serif JP', serif;
+      --font-body: 'Zen Kaku Gothic Antique', 'Noto Sans JP', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body); color: var(--ink); background: var(--paper);
+      font-size: 15px; line-height: 1.85; letter-spacing: 0.02em; -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* Header */
+    .header { display: flex; align-items: center; justify-content: space-between; padding: 28px 56px; border-bottom: 1px solid var(--rule); }
+    .header-left { display: flex; align-items: baseline; gap: 12px; }
+    .header-logo { font-family: var(--font-heading); font-size: 22px; letter-spacing: 0.06em; }
+    .header-tagline { font-size: 11px; color: var(--ink-mute); letter-spacing: 0.18em; }
+    .header-nav { display: flex; gap: 32px; font-size: 13px; color: var(--ink-soft); letter-spacing: 0.1em; }
+    .header-nav a:hover { color: var(--accent); }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; }
+
+    /* Hero */
+    .hero { border-bottom: 1px solid var(--rule); }
+    .hero-masthead {
+      display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+      padding: 22px 56px; border-bottom: 1px solid var(--rule);
+      font-size: 11px; letter-spacing: 0.3em; color: var(--ink-soft);
+    }
+    .hero-masthead-center { font-family: var(--font-heading); color: var(--accent); letter-spacing: 0.4em; }
+    .hero-main { display: grid; grid-template-columns: 1.05fr 0.95fr; min-height: 720px; }
+    .hero-text { padding: 70px 56px 80px; position: relative; z-index: 2; }
+    .hero-eyebrow { font-family: var(--font-heading); font-size: 12px; color: var(--accent); letter-spacing: 0.4em; margin-bottom: 24px; }
+    .hero-title { font-family: var(--font-heading); font-size: min(6.5vw, 72px); font-weight: 500; line-height: 1.4; letter-spacing: 0.06em; margin: 0 0 24px; }
+    .hero-sub { font-family: var(--font-heading); font-size: 22px; color: var(--ink-soft); letter-spacing: 0.12em; line-height: 1.7; margin: 0 0 36px; padding-left: 4px; }
+    .hero-divider { display: flex; align-items: center; gap: 18px; margin: 0 0 32px; }
+    .hero-divider-line { flex: 1; height: 1px; background: var(--rule); }
+    .hero-divider-line:first-child { max-width: 260px; }
+    .hero-divider-line:last-child { max-width: 60px; }
+    .hero-divider-num { font-family: var(--font-heading); font-size: 13px; font-style: italic; color: var(--accent); letter-spacing: 0.2em; }
+    .hero-desc { font-size: 14.5px; color: var(--ink-soft); max-width: 440px; margin: 0 0 44px; line-height: 2.1; }
+    .hero-buttons { display: flex; gap: 14px; align-items: center; }
+    .btn-dark { display: inline-block; padding: 16px 38px; background: var(--ink); color: var(--paper); font-size: 12px; letter-spacing: 0.3em; font-family: var(--font-heading); cursor: pointer; border: none; transition: opacity 0.2s; }
+    .btn-dark:hover { opacity: 0.85; }
+    .btn-outline { display: inline-block; padding: 16px 32px; border: 1px solid var(--ink); color: var(--ink); font-size: 12px; letter-spacing: 0.3em; font-family: var(--font-heading); cursor: pointer; background: none; transition: background 0.2s; }
+    .btn-outline:hover { background: rgba(44,38,32,0.05); }
+
+    /* Hero image */
+    .hero-image { position: relative; overflow: hidden; }
+    .hero-image img { position: absolute; inset: 0; object-fit: cover; width: 100%; height: 100%; }
+    .hero-image-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(61,53,40,0.3), rgba(44,38,32,0.15)); }
+    .hero-image-sticker {
+      position: absolute; top: 32%; right: 32px; background: var(--paper); color: var(--ink);
+      padding: 14px 18px; max-width: 200px; border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent); z-index: 2;
+    }
+    .hero-image-sticker-eyebrow { font-size: 9px; letter-spacing: 0.4em; color: var(--accent); margin-bottom: 6px; }
+    .hero-image-sticker-text { font-family: var(--font-heading); font-size: 14px; line-height: 1.5; letter-spacing: 0.04em; }
+
+    /* Hero strip */
+    .hero-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--rule); background: var(--paper); }
+    .hero-strip-item { padding: 22px 28px; border-right: 1px solid var(--rule); }
+    .hero-strip-item:last-child { border-right: none; }
+    .hero-strip-num { font-family: var(--font-heading); font-size: 11px; color: var(--accent); font-style: italic; letter-spacing: 0.2em; margin-bottom: 6px; }
+    .hero-strip-title { font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.06em; margin-bottom: 4px; }
+    .hero-strip-en { font-size: 9.5px; color: var(--ink-mute); letter-spacing: 0.3em; }
+
+    /* Section header */
+    .section-head { text-align: center; margin-bottom: 64px; }
+    .section-eyebrow { font-size: 11px; letter-spacing: 0.4em; color: var(--accent); margin-bottom: 18px; }
+    .section-title { font-family: var(--font-heading); font-size: 32px; font-weight: 500; letter-spacing: 0.08em; margin: 0; }
+    .section-sub { margin-top: 12px; font-size: 13px; color: var(--ink-mute); letter-spacing: 0.1em; }
+
+    /* Worries */
+    .worries { padding: 80px 56px 100px; border-top: 1px solid var(--rule); background: var(--paper-deep); }
+    .worries-grid { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; background: var(--paper); border: 1px solid var(--rule); }
+    .worry-item { padding: 28px 32px; display: flex; gap: 20px; align-items: flex-start; }
+    .worry-item-border-right { border-right: 1px solid var(--rule); }
+    .worry-item-border-bottom { border-bottom: 1px solid var(--rule); }
+    .worry-num { font-family: var(--font-heading); font-size: 12px; color: var(--accent); letter-spacing: 0.2em; white-space: nowrap; padding-top: 4px; }
+    .worry-label { font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.06em; margin-bottom: 6px; }
+    .worry-desc { font-size: 13.5px; color: var(--ink-soft); line-height: 1.8; }
+    .worry-answer { max-width: 720px; margin: 60px auto 0; text-align: center; padding: 40px 32px; border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent); }
+    .worry-answer-eyebrow { font-size: 11px; letter-spacing: 0.3em; color: var(--accent); margin-bottom: 16px; }
+    .worry-answer-title { font-family: var(--font-heading); font-size: 24px; line-height: 1.7; letter-spacing: 0.06em; }
+    .worry-answer-title strong { color: var(--accent); font-weight: 500; }
+    .worry-answer-sub { margin-top: 14px; font-size: 13.5px; color: var(--ink-soft); }
+
+    /* Features */
+    .features { padding: 100px 56px 120px; }
+    .features-list { max-width: 980px; margin: 0 auto; }
+    .feature-row { display: grid; grid-template-columns: 80px 240px 1fr; gap: 32px; padding: 32px 0; border-bottom: 1px solid var(--rule); align-items: flex-start; }
+    .feature-row:first-child { border-top: 1px solid var(--rule); }
+    .feature-num { font-family: var(--font-heading); font-size: 20px; font-style: italic; color: var(--accent); letter-spacing: 0.1em; }
+    .feature-cat { font-size: 11px; letter-spacing: 0.25em; color: var(--ink-mute); margin-bottom: 6px; }
+    .feature-name { font-family: var(--font-heading); font-size: 19px; line-height: 1.5; letter-spacing: 0.04em; }
+    .feature-desc { font-size: 14px; color: var(--ink-soft); line-height: 1.95; padding-top: 4px; }
+    .feature-image { max-width: 980px; margin: 48px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--rule); overflow: hidden; }
+    .feature-image img { width: 100%; height: 260px; object-fit: cover; display: block; }
+    .feature-image-item { border-right: 1px solid var(--rule); }
+    .feature-image-item:last-child { border-right: none; }
+
+    /* Concept */
+    .concept { padding: 110px 56px 130px; background: var(--paper-deep); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .concept-body { max-width: 720px; margin: 0 auto; text-align: center; font-size: 15.5px; line-height: 2.2; color: var(--ink-soft); }
+    .concept-highlight { margin: 50px auto; display: flex; align-items: center; gap: 20px; justify-content: center; }
+    .concept-highlight-line { width: 40px; height: 1px; background: var(--accent); }
+    .concept-highlight-text { font-family: var(--font-heading); font-size: 26px; line-height: 1.7; color: var(--ink); letter-spacing: 0.06em; }
+
+    /* Guide */
+    .guide { padding: 100px 56px 120px; }
+    .guide-comparison { max-width: 980px; margin: 0 auto 70px; display: grid; grid-template-columns: 1fr 60px 1fr; align-items: stretch; }
+    .guide-col { padding: 36px 32px; }
+    .guide-col-general { border: 1px solid var(--rule); background: var(--paper); }
+    .guide-col-forwan { border: 1px solid var(--ink); background: var(--ink); color: var(--paper); }
+    .guide-col-label { font-size: 11px; letter-spacing: 0.25em; color: var(--ink-mute); margin-bottom: 8px; }
+    .guide-col-forwan .guide-col-label { color: var(--paper-deep); opacity: 0.7; }
+    .guide-col h4 { font-family: var(--font-heading); font-size: 18px; font-weight: 500; margin-bottom: 24px; letter-spacing: 0.05em; }
+    .guide-col-forwan h4 { color: var(--paper); }
+    .guide-col-item { font-size: 13.5px; color: var(--ink-soft); padding: 12px 0 12px 20px; position: relative; border-bottom: 1px dotted var(--rule); }
+    .guide-col-item:last-child { border-bottom: none; }
+    .guide-col-item::before { content: '\2014'; position: absolute; left: 0; color: var(--ink-mute); }
+    .guide-col-forwan .guide-col-item { color: var(--paper-deep); border-bottom-color: rgba(244,238,226,0.25); }
+    .guide-col-forwan .guide-col-item::before { content: '\25CB'; color: var(--accent); }
+    .guide-vs { display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 14px; color: var(--accent); letter-spacing: 0.3em; writing-mode: vertical-rl; text-orientation: mixed; }
+    .guide-note { max-width: 760px; margin: 0 auto 80px; padding: 40px 44px; background: var(--paper-deep); position: relative; }
+    .guide-note-bracket { position: absolute; font-family: var(--font-heading); font-size: 28px; color: var(--accent); line-height: 1; }
+    .guide-note-bracket-open { top: 12px; left: 12px; }
+    .guide-note-bracket-close { bottom: 12px; right: 12px; }
+    .guide-note h4 { font-family: var(--font-heading); font-size: 19px; margin-bottom: 18px; text-align: center; letter-spacing: 0.05em; font-weight: 500; }
+    .guide-note p { font-size: 14px; line-height: 2; color: var(--ink-soft); text-align: center; }
+    .guide-steps-title { text-align: center; font-family: var(--font-heading); font-size: 16px; font-weight: 500; color: var(--ink-soft); letter-spacing: 0.2em; margin-bottom: 40px; }
+    .guide-steps { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); }
+    .guide-step { padding: 28px 24px; border-left: 1px solid var(--rule); }
+    .guide-step:last-child { border-right: 1px solid var(--rule); }
+    .guide-step-num { font-family: var(--font-heading); font-size: 13px; color: var(--accent); letter-spacing: 0.3em; margin-bottom: 14px; }
+    .guide-step-title { font-family: var(--font-heading); font-size: 16px; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .guide-step-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.85; }
+
+    /* Contact */
+    .contact { padding: 110px 56px 120px; background: var(--ink); color: var(--paper); text-align: center; }
+    .contact-eyebrow { font-size: 11px; letter-spacing: 0.4em; color: var(--accent); margin-bottom: 24px; }
+    .contact h2 { font-family: var(--font-heading); font-size: 36px; font-weight: 500; margin-bottom: 18px; letter-spacing: 0.08em; }
+    .contact-desc { font-size: 14px; color: var(--paper-deep); margin-bottom: 50px; opacity: 0.85; }
+    .contact-grid { max-width: 620px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--paper-deep); }
+    .contact-item { padding: 32px 24px; color: var(--paper); }
+    .contact-item:first-child { border-right: 1px solid var(--paper-deep); }
+    .contact-item-label { font-size: 11px; letter-spacing: 0.3em; color: var(--accent); margin-bottom: 10px; }
+    .contact-item-value { font-family: var(--font-heading); font-size: 16px; letter-spacing: 0.04em; }
+    .contact-item-arrow { font-size: 11px; color: var(--paper-deep); margin-top: 8px; opacity: 0.7; letter-spacing: 0.1em; }
+
+    /* Footer */
+    .footer { padding: 36px 56px; background: var(--ink); color: var(--paper-deep); border-top: 1px solid rgba(244,238,226,0.15); display: flex; justify-content: space-between; align-items: center; font-size: 12px; letter-spacing: 0.1em; opacity: 0.7; }
+    .footer-logo { font-family: var(--font-heading); letter-spacing: 0.15em; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .header { padding: 20px 24px; }
+      .header-nav { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--paper); flex-direction: column; padding: 20px 24px; gap: 16px; border-bottom: 1px solid var(--rule); z-index: 100; }
+      .header-nav.open { display: flex; }
+      .hamburger { display: block; }
+      .header-tagline { display: none; }
+      .hero-masthead { display: none; }
+      .hero-main { grid-template-columns: 1fr; min-height: auto; }
+      .hero-text { padding: 50px 24px 60px; }
+      .hero-title { font-size: 32px; }
+      .hero-sub { font-size: 18px; }
+      .hero-image { min-height: 300px; }
+      .hero-image-sticker { display: none; }
+      .hero-strip { grid-template-columns: 1fr 1fr; }
+      .hero-strip-item:nth-child(2) { border-right: none; }
+      .worries { padding: 60px 24px 80px; }
+      .worries-grid { grid-template-columns: 1fr; }
+      .worry-item-border-right { border-right: none; }
+      .features { padding: 60px 24px 80px; }
+      .feature-image { grid-template-columns: 1fr; }
+      .feature-image img { height: 200px; }
+      .feature-image-item { border-right: none; border-bottom: 1px solid var(--rule); }
+      .feature-image-item:last-child { border-bottom: none; }
+      .feature-row { grid-template-columns: 60px 1fr; gap: 16px; }
+      .feature-desc { grid-column: 1 / -1; padding-top: 0; }
+      .concept { padding: 60px 24px 80px; }
+      .concept-highlight-text { font-size: 20px; }
+      .guide { padding: 60px 24px 80px; }
+      .guide-comparison { grid-template-columns: 1fr; gap: 0; }
+      .guide-vs { writing-mode: horizontal-tb; padding: 16px; text-align: center; }
+      .guide-steps { grid-template-columns: 1fr; }
+      .guide-note { padding: 32px 24px; }
+      .guide-note p { text-align: left; }
+      .contact { padding: 60px 24px 80px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-item:first-child { border-right: none; border-bottom: 1px solid var(--paper-deep); }
+      .footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+      .section-title { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <a href="#" class="header-logo">for wan</a>
+      <span class="header-tagline">── 愛犬のための手作りごはんレシピ</span>
+    </div>
+    <button class="hamburger" aria-label="Menu" onclick="document.querySelector('.header-nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="header-nav">
+      <a href="#worries">お悩み</a>
+      <a href="#features">こだわり</a>
+      <a href="#concept">コンセプト</a>
+      <a href="#guide">はじめての方へ</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-masthead">
+      <div>VOL. 01 / SPRING ISSUE</div>
+      <div class="hero-masthead-center">── FOR DOGS, WITH LOVE ──</div>
+      <div style="text-align: right;">RECIPE</div>
+    </div>
+    <div class="hero-main">
+      <div class="hero-text">
+        <div class="hero-eyebrow">── recipe site</div>
+        <h1 class="hero-title">愛犬のために、<br>考えぬいた一皿を。</h1>
+        <div class="hero-sub">栄養士が設計する、手作りごはんレシピ。</div>
+        <div class="hero-divider">
+          <span class="hero-divider-line"></span>
+          <span class="hero-divider-num">no. 01</span>
+          <span class="hero-divider-line"></span>
+        </div>
+        <p class="hero-desc">
+          スーパーで手に入る旬の食材と、ペット管理栄養士が設計したレシピを無料で公開。<br>
+          「何を作ればいいかわからない」を解決します。
+        </p>
+        <div class="hero-buttons">
+          <a href="#" class="btn-dark">RECIPES</a>
+          <a href="https://instagram.com/for_wan" class="btn-outline" target="_blank" rel="noopener">INSTAGRAM</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="public/images/hero.jpg" alt="手作り犬用ごはん">
+        <div class="hero-image-overlay"></div>
+        <div class="hero-image-sticker">
+          <div class="hero-image-sticker-eyebrow">INSIDE / p.04</div>
+          <div class="hero-image-sticker-text">AAFCO基準で、栄養を設計する。</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-strip">
+      <div class="hero-strip-item">
+        <div class="hero-strip-num">p.01</div>
+        <div class="hero-strip-title">お悩み</div>
+        <div class="hero-strip-en">WORRIES</div>
+      </div>
+      <div class="hero-strip-item">
+        <div class="hero-strip-num">p.02</div>
+        <div class="hero-strip-title">こだわり</div>
+        <div class="hero-strip-en">OUR CRAFT</div>
+      </div>
+      <div class="hero-strip-item">
+        <div class="hero-strip-num">p.03</div>
+        <div class="hero-strip-title">コンセプト</div>
+        <div class="hero-strip-en">CONCEPT</div>
+      </div>
+      <div class="hero-strip-item">
+        <div class="hero-strip-num">p.04</div>
+        <div class="hero-strip-title">はじめての方へ</div>
+        <div class="hero-strip-en">GUIDE</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Worries -->
+  <section class="worries" id="worries">
+    <div class="section-head">
+      <div class="section-eyebrow">── 01 / WORRIES ──</div>
+      <h2 class="section-title">こんなお悩み、ありませんか？</h2>
+      <div class="section-sub">愛犬の食事で気になること</div>
+    </div>
+    <div class="worries-grid">
+      <div class="worry-item worry-item-border-right worry-item-border-bottom">
+        <div class="worry-num">— 01</div>
+        <div><div class="worry-label">原材料・添加物</div><div class="worry-desc">市販フードの原材料や添加物が気になる</div></div>
+      </div>
+      <div class="worry-item worry-item-border-bottom">
+        <div class="worry-num">— 02</div>
+        <div><div class="worry-label">栄養バランス</div><div class="worry-desc">手作りしたいけど、栄養バランスが心配</div></div>
+      </div>
+      <div class="worry-item worry-item-border-right worry-item-border-bottom">
+        <div class="worry-num">— 03</div>
+        <div><div class="worry-label">情報の信憑性</div><div class="worry-desc">ネットのレシピ、本当に栄養は足りてる？</div></div>
+      </div>
+      <div class="worry-item worry-item-border-bottom">
+        <div class="worry-num">— 04</div>
+        <div><div class="worry-label">レシピがわからない</div><div class="worry-desc">何をどれくらい使えばいいの？</div></div>
+      </div>
+      <div class="worry-item worry-item-border-right">
+        <div class="worry-num">— 05</div>
+        <div><div class="worry-label">食欲のゆらぎ</div><div class="worry-desc">うちの子、最近ごはんを残すようになった</div></div>
+      </div>
+      <div class="worry-item">
+        <div class="worry-num">— 06</div>
+        <div><div class="worry-label">続けられる価格</div><div class="worry-desc">プレミアムフードは高すぎて続かない</div></div>
+      </div>
+    </div>
+    <div class="worry-answer">
+      <div class="worry-answer-eyebrow">── ANSWER ──</div>
+      <div class="worry-answer-title">その悩み、<strong>For wan</strong> のレシピが解決します。</div>
+      <div class="worry-answer-sub">ペット栄養士が設計したレシピで、「安心」と「おいしい」を両立。<br>スーパーの食材で、おうちで作れます。</div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="section-head">
+      <div class="section-eyebrow">── 02 / OUR CRAFT ──</div>
+      <h2 class="section-title">5つのこだわり</h2>
+      <div class="section-sub">For wan のレシピが大切にしていること</div>
+    </div>
+    <div class="features-list">
+      <div class="feature-row">
+        <div class="feature-num">i.</div>
+        <div><div class="feature-cat">レシピ設計</div><div class="feature-name">ペット管理栄養士 × ペット食育指導士</div></div>
+        <div class="feature-desc">2つの専門資格を持つ栄養士が、愛犬の健康を考えたレシピを一つひとつ設計。栄養バランスはもちろん、美味しさにもこだわります。</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-num">ii.</div>
+        <div><div class="feature-cat">栄養設計</div><div class="feature-name">AAFCO基準に基づく</div></div>
+        <div class="feature-desc">世界的に認められたAAFCO（米国飼料検査官協会）の栄養基準をクリア。手作りだからこそ、科学的な根拠に基づいた栄養設計を徹底しています。</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-num">iii.</div>
+        <div><div class="feature-cat">食材の品質</div><div class="feature-name">ヒューマングレード ─ 人も食べられる</div></div>
+        <div class="feature-desc">レシピで使う食材はすべてヒューマングレード。人の食品と同等の品質基準で、飼い主さんも安心できるレシピをお届けします。</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-num">iv.</div>
+        <div><div class="feature-cat">旬の食材</div><div class="feature-name">スーパーで買える、身近な恵み</div></div>
+        <div class="feature-desc">特別な食材ではなく、身近なスーパーで手に入る旬の食材でレシピを構成。季節の恵みを活かして、新鮮な美味しさを届けます。</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-num">v.</div>
+        <div><div class="feature-cat">わかりやすさ</div><div class="feature-name">初めてでも迷わない、丁寧なレシピ</div></div>
+        <div class="feature-desc">食材の分量、手順、栄養バランスの解説まで。手作りごはんが初めての方でも安心して作れるよう、わかりやすさを徹底しています。</div>
+      </div>
+    </div>
+    <div class="feature-image">
+      <div class="feature-image-item"><img src="public/images/feature.jpg" alt="犬用レシピの設計"></div>
+      <div class="feature-image-item"><img src="public/images/feature2.jpg" alt="AAFCO基準に基づく栄養計算"></div>
+      <div class="feature-image-item"><img src="public/images/5.jpg" alt="ヒューマングレードの食材"></div>
+    </div>
+  </section>
+
+  <!-- Concept -->
+  <section class="concept" id="concept">
+    <div class="section-head">
+      <div class="section-eyebrow">── 03 / CONCEPT ──</div>
+      <h2 class="section-title">コンセプト</h2>
+      <div class="section-sub">For wan に込めた想い</div>
+    </div>
+    <div class="concept-body">
+      <p>
+        市販のドッグフードは便利だけど、原材料が気になる。<br>
+        手作りしたいけど、栄養バランスが心配。<br>
+        ネットのレシピは、本当に信頼できる？<br>
+        そんな飼い主さんの声から、For wan は生まれました。
+      </p>
+      <div class="concept-highlight">
+        <span class="concept-highlight-line"></span>
+        <p class="concept-highlight-text">栄養士が設計したレシピを、<br>すべての飼い主さんに。</p>
+        <span class="concept-highlight-line"></span>
+      </div>
+      <p>
+        ペットの栄養学を専門に学んだスタッフが、<br>
+        科学的根拠に基づいたレシピを設計し、無料で公開。<br>
+        スーパーで買える食材だけで、<br>
+        おうちで安心な手作りごはんが作れます。
+      </p>
+    </div>
+  </section>
+
+  <!-- Guide -->
+  <section class="guide" id="guide">
+    <div class="section-head">
+      <div class="section-eyebrow">── 04 / GUIDE ──</div>
+      <h2 class="section-title">はじめての方へ</h2>
+      <div class="section-sub">手作りごはん、何が違うの？</div>
+    </div>
+
+    <div class="guide-comparison">
+      <div class="guide-col guide-col-general">
+        <div class="guide-col-label">GENERAL</div>
+        <h4>市販のドライフード</h4>
+        <div class="guide-col-item">加工度が高く、原材料がわかりにくい</div>
+        <div class="guide-col-item">保存料・着色料・香料が含まれることも</div>
+        <div class="guide-col-item">水分量が少ない（約10%）</div>
+        <div class="guide-col-item">同じ味・食感の繰り返し</div>
+      </div>
+      <div class="guide-vs">── vs ──</div>
+      <div class="guide-col guide-col-forwan">
+        <div class="guide-col-label">FOR WAN RECIPE</div>
+        <h4>For wan のレシピで作るごはん</h4>
+        <div class="guide-col-item">食材がそのまま見える、安心感</div>
+        <div class="guide-col-item">添加物を使わない、素材の味</div>
+        <div class="guide-col-item">水分たっぷりで消化にやさしい（約70%）</div>
+        <div class="guide-col-item">旬の食材で、季節ごとに変わる美味しさ</div>
+      </div>
+    </div>
+
+    <div class="guide-note">
+      <span class="guide-note-bracket guide-note-bracket-open">「</span>
+      <span class="guide-note-bracket guide-note-bracket-close">」</span>
+      <h4>手作り＝栄養不足、ではありません。</h4>
+      <p>
+        よくある不安が「手作りだと栄養が偏るのでは？」というもの。<br>
+        For wan のレシピは、AAFCO基準に基づきペット管理栄養士が栄養設計しています。<br>
+        タンパク質・脂質・ビタミン・ミネラルのバランスを計算した上で組んでいるので、<br>
+        手作りでも安心して毎日のごはんにできます。
+      </p>
+    </div>
+
+    <div class="guide-steps-title">── For wan レシピの使い方 ──</div>
+    <div class="guide-steps">
+      <div class="guide-step">
+        <div class="guide-step-num">STEP 01</div>
+        <div class="guide-step-title">レシピを選ぶ</div>
+        <div class="guide-step-desc">愛犬の体重や好みに合ったレシピをブログから選べます</div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">STEP 02</div>
+        <div class="guide-step-title">食材を買う</div>
+        <div class="guide-step-desc">必要な食材はすべてスーパーで手に入るものだけ</div>
+      </div>
+      <div class="guide-step">
+        <div class="guide-step-num">STEP 03</div>
+        <div class="guide-step-title">おうちで作る</div>
+        <div class="guide-step-desc">手順どおりに作るだけ。栄養計算はレシピに含まれています</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="contact-eyebrow">── 05 / CONTACT ──</div>
+    <h2>お問い合わせ</h2>
+    <p class="contact-desc">レシピへのご質問、コラボレーションのご相談など、お気軽にご連絡ください。</p>
+    <div class="contact-grid">
+      <a href="mailto:contact@for-wan.com" class="contact-item">
+        <div class="contact-item-label">MAIL</div>
+        <div class="contact-item-value">contact@for-wan.com</div>
+        <div class="contact-item-arrow">── メールでお問い合わせ →</div>
+      </a>
+      <a href="https://instagram.com/for_wan" class="contact-item" target="_blank" rel="noopener">
+        <div class="contact-item-label">INSTAGRAM</div>
+        <div class="contact-item-value">@for_wan</div>
+        <div class="contact-item-arrow">── 日々の様子はこちら →</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">for wan</div>
+    <div>&copy; 2026 For wan. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
