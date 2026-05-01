@@ -1,0 +1,155 @@
+For wan LP用 フリー素材リンク集
+=============================================
+全てUnsplash / Pexels（無料・商用OK・クレジット不要）
+保存先: for-wan/public/images/
+右クリック→名前を付けて保存、またはダウンロードボタン
+
+---------------------------------------------
+1. hero.jpg（ヒーロー画像）
+---------------------------------------------
+犬が嬉しそうにフレッシュフードを食べている写真
+
+候補A: ボーダーコリーが生食を食べている
+https://unsplash.com/photos/dog-happily-eats-raw-food-from-a-bowl-3dKlQP-6120
+
+候補B: 犬がドッグベッドでごはんを食べている（ナチュラルな雰囲気）
+https://unsplash.com/photos/RwfB-WdajfA
+
+候補C: 茶白の犬がボウルから食べている
+https://unsplash.com/photos/a-brown-and-white-dog-eating-food-out-of-a-bowl-Qvbr5Uxgz_Q
+
+その他: https://unsplash.com/s/photos/dog-eating
+
+---------------------------------------------
+2. worries-bg.jpg（お悩みセクション）
+---------------------------------------------
+ごはんを待っている犬、または飼い主を見上げる犬
+
+検索ページ: https://unsplash.com/s/photos/dog-waiting
+検索ページ: https://unsplash.com/s/photos/happy-dog
+
+---------------------------------------------
+3. feature-recipe.jpg（レシピ設計）
+---------------------------------------------
+ノート+食材の俯瞰写真
+
+候補A: スパイスのフラットレイ
+https://unsplash.com/photos/flat-lay-photography-of-spices-on-plate-i0IvwAhhGZM
+
+検索ページ: https://unsplash.com/s/photos/food-flat-lay
+検索ページ: https://unsplash.com/s/photos/food-flatlay
+
+---------------------------------------------
+4. feature-aafco.jpg（AAFCO基準・計量）
+---------------------------------------------
+キッチンスケール+食材
+
+検索ページ: https://unsplash.com/s/photos/kitchen-scale
+検索ページ: https://unsplash.com/s/photos/food-scale
+
+---------------------------------------------
+5. feature-humangrade.jpg（ヒューマングレード）
+---------------------------------------------
+まな板の上の鶏肉と野菜
+
+候補A: 木のまな板に鶏肉と野菜
+https://unsplash.com/photos/a-wooden-cutting-board-topped-with-chicken-and-vegetables-peTm4xWlN8c
+
+候補B: カット済み野菜のクローズアップ
+https://unsplash.com/photos/EGtRM9PFG64
+
+候補C: 鶏肉と野菜のスライス
+https://unsplash.com/photos/m1meZgcUYEk
+
+その他: https://unsplash.com/s/photos/cutting-vegetables
+
+---------------------------------------------
+6. feature-seasonal.jpg（旬の食材）
+---------------------------------------------
+かご入りの季節野菜
+
+候補A: かぼちゃなど秋野菜のバスケット
+https://unsplash.com/photos/basket-of-vegetables-IIoFOc6_N2U
+
+候補B: きゅうりのバスケット（木のテーブル）
+https://unsplash.com/photos/a-basket-filled-with-green-cucumbers-on-top-of-a-wooden-table-5j0efW43qeA
+
+候補C: 緑の野菜のバスケット
+https://unsplash.com/photos/DxDzYtLoxKE
+
+その他: https://unsplash.com/s/photos/vegetable-basket
+
+---------------------------------------------
+7. feature-hygiene.jpg（衛生管理）
+---------------------------------------------
+清潔なキッチンでの調理
+
+候補A: 女性がコンロで調理中
+https://unsplash.com/photos/a-woman-in-a-black-top-is-cooking-on-a-stove-JZ7ijcAseIU
+
+候補B: 鍋を持つ女性
+https://unsplash.com/photos/v5afgIby-08
+
+検索ページ: https://unsplash.com/s/photos/cooking-kitchen
+
+---------------------------------------------
+8. concept.jpg（コンセプト）
+---------------------------------------------
+犬と飼い主の幸せな日常
+
+検索ページ: https://unsplash.com/s/photos/dog-owner
+検索ページ: https://unsplash.com/s/photos/happy-dog
+
+---------------------------------------------
+9. compare-kibble.jpg（市販ドライフード）
+---------------------------------------------
+ボウルに入ったドライフード
+
+候補A: ステンレスボウルのドッグフード
+https://www.pexels.com/photo/dog-food-in-a-stainless-steel-bowl-8434641/
+
+候補B: 白いボウルにドッグフード
+https://www.pexels.com/photo/dog-food-in-a-pet-bowl-on-a-wooden-surface-8473516/
+
+候補C: 紙袋からフードを注ぐ
+https://www.pexels.com/photo/a-person-pouring-dog-food-on-the-bowl-6568942/
+
+---------------------------------------------
+10. compare-handmade.jpg（For wanの手作り）
+---------------------------------------------
+素材が見える手作りフード
+
+候補A: ボウルの調理済みフード
+https://www.pexels.com/photo/cooked-food-in-the-bowl-6646072/
+
+候補B: ボーダーコリーの生食
+https://unsplash.com/photos/dog-happily-eats-raw-food-from-a-bowl-3dKlQP-6120
+
+---------------------------------------------
+11. step-01.jpg〜step-04.jpg（製造ステップ）
+---------------------------------------------
+STEP 01 食材を厳選:
+https://unsplash.com/s/photos/grocery-vegetables
+https://unsplash.com/s/photos/vegetable-basket
+
+STEP 02 栄養設計:
+https://unsplash.com/s/photos/food-flat-lay
+https://unsplash.com/s/photos/kitchen-scale
+
+STEP 03 丁寧に調理:
+https://unsplash.com/s/photos/cooking-kitchen
+https://unsplash.com/s/photos/cooking-in-kitchen
+
+STEP 04 お届け:
+https://unsplash.com/s/photos/dog-eating
+https://unsplash.com/photos/a-brown-and-white-dog-eating-food-out-of-a-bowl-Qvbr5Uxgz_Q
+
+---------------------------------------------
+12. og-default.jpg（OGP）
+---------------------------------------------
+→ hero.jpg を流用
+
+=============================================
+合計: 15枚
+選んだらfor-wan/public/images/に上記ファイル名で保存してください。
+揃ったらHTMLに組み込みます。

@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/global.css';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .filter(p => !p.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const formatDate = (date: Date) =>
+  `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;
+---
+
+<Layout title="ブログ | For wan" description="犬の食事と健康に関する情報を、ペット管理栄養士がお届けします。">
+
+  <div class="post-header">
+    <h1>ブログ</h1>
+    <p class="post-meta">犬の食事と健康に関する情報をお届け</p>
+  </div>
+
+  <div class="container" style="padding-bottom: 80px;">
+    {posts.length === 0 ? (
+      <p style="text-align: center; color: var(--color-text-light);">まだ記事がありません。</p>
+    ) : (
+      <div class="blog-grid">
+        {posts.map(post => (
+          <a href={`/blog/${post.id}/`} class="blog-card">
+            <div class="blog-card-body">
+              <p class="blog-card-date">{formatDate(post.data.date)}</p>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+
+</Layout>

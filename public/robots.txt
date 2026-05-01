@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://for-wan.netlify.app/sitemap-index.xml

@@ -1,0 +1,228 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .filter(p => !p.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const formatDate = (date: Date) =>
+  `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;
+---
+
+<Layout title="For wan | 愛犬のための手作りごはん">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge">ペット管理栄養士 × ペット食育指導士 監修</div>
+    <h1>愛犬に、ほんものの<br/>「おいしい」を。</h1>
+    <p>
+      スーパーで手に入る旬の食材と、栄養士が設計したレシピで<br/>
+      安心・安全な手作りごはんをお届けします。
+    </p>
+    <a href="#contact" class="btn-primary">お問い合わせはこちら</a>
+  </section>
+
+  <!-- Worries -->
+  <section class="section section-alt" id="worries">
+    <h2 class="section-title">こんなお悩み、ありませんか？</h2>
+    <p class="section-subtitle">愛犬の食事で気になること</p>
+    <div class="worries-grid container">
+      <div class="worry-card">
+        <div class="worry-icon">&#x1F914;</div>
+        <p class="worry-text">市販フードの<strong>原材料や添加物</strong>が気になる...</p>
+      </div>
+      <div class="worry-card">
+        <div class="worry-icon">&#x1F373;</div>
+        <p class="worry-text">手作りしたいけど、<strong>栄養バランス</strong>が心配</p>
+      </div>
+      <div class="worry-card">
+        <div class="worry-icon">&#x1F4CA;</div>
+        <p class="worry-text">ネットのレシピ、本当に<strong>栄養は足りてる？</strong></p>
+      </div>
+      <div class="worry-card">
+        <div class="worry-icon">&#x23F0;</div>
+        <p class="worry-text">毎日手作りする<strong>時間がない</strong></p>
+      </div>
+      <div class="worry-card">
+        <div class="worry-icon">&#x1F436;</div>
+        <p class="worry-text">うちの子、最近<strong>ごはんを残す</strong>ようになった</p>
+      </div>
+      <div class="worry-card">
+        <div class="worry-icon">&#x1F4B0;</div>
+        <p class="worry-text">プレミアムフードは<strong>高すぎて続かない</strong></p>
+      </div>
+    </div>
+    <div class="worry-answer">
+      <p class="worry-answer-text">その悩み、<strong>For wan</strong> が解決します。</p>
+      <p class="worry-answer-sub">ペット栄養士が設計した手作りごはんで、<br/>「安心」と「おいしい」を両立。</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" id="features">
+    <h2 class="section-title">5つのこだわり</h2>
+    <p class="section-subtitle">For wan が大切にしていること</p>
+    <div class="features-grid container">
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F4DD;</div>
+        <h3>ペット管理栄養士 × ペット食育指導士<br/>がレシピを設計</h3>
+        <p>2つの専門資格を持つ栄養士が、愛犬の健康を考えたレシピを一つひとつ設計。栄養バランスはもちろん、美味しさにもこだわります。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x2705;</div>
+        <h3>AAFCO基準に基づく<br/>栄養設計</h3>
+        <p>世界的に認められたAAFCO（米国飼料検査官協会）の栄養基準をクリア。手作りだからこそ、科学的な根拠に基づいた栄養設計を徹底しています。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F37D;&#xFE0F;</div>
+        <h3>ヒューマングレード<br/>人も食べられる品質</h3>
+        <p>使う食材はすべてヒューマングレード。人の食品と同等の衛生管理・品質基準で製造し、飼い主さんも安心できる品質をお約束します。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F966;</div>
+        <h3>スーパーで買える<br/>旬の食材を使用</h3>
+        <p>特別な食材ではなく、身近なスーパーで手に入る旬の食材を厳選。季節の恵みを活かしたレシピで、新鮮な美味しさを届けます。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F3E5;</div>
+        <h3>人の食品と同等の<br/>衛生管理体制</h3>
+        <p>製造工程は人の食品製造と同じレベルの衛生管理を実施。食材の仕入れから加工、包装まで、安全で清潔な環境を徹底しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Concept -->
+  <section class="section section-alt" id="concept">
+    <h2 class="section-title">コンセプト</h2>
+    <p class="section-subtitle">For wan に込めた想い</p>
+    <div class="concept-block">
+      <p>
+        市販のドッグフードは便利だけど、原材料が気になる。<br/>
+        手作りしたいけど、栄養バランスが心配。<br/>
+        そんな飼い主さんの声から、For wan は生まれました。
+      </p>
+      <p class="concept-highlight">
+        「愛犬のために、ちゃんと考えられた手作りごはんを」
+      </p>
+      <p>
+        ペットの栄養学を専門に学んだスタッフが、<br/>
+        科学的根拠とやさしさを両立させたレシピを設計。<br/>
+        人も食べられる品質の食材で、毎日のごはんをもっと安心なものに。
+      </p>
+    </div>
+  </section>
+
+  <!-- Handmade Guide -->
+  <section class="section" id="handmade">
+    <h2 class="section-title">はじめての方へ</h2>
+    <p class="section-subtitle">手作りごはん、何が違うの？</p>
+    <div class="guide-container container">
+      <div class="guide-comparison">
+        <div class="guide-column guide-kibble">
+          <h3>市販のドライフード</h3>
+          <ul>
+            <li>加工度が高く、原材料がわかりにくい</li>
+            <li>保存料・着色料・香料が含まれることも</li>
+            <li>水分量が少ない（約10%）</li>
+            <li>同じ味・食感の繰り返し</li>
+          </ul>
+        </div>
+        <div class="guide-vs">VS</div>
+        <div class="guide-column guide-handmade">
+          <h3>For wan の手作りごはん</h3>
+          <ul>
+            <li>食材がそのまま見える安心感</li>
+            <li>添加物を使わない、素材の味</li>
+            <li>水分たっぷりで消化にやさしい（約70%）</li>
+            <li>旬の食材で季節ごとに変わる美味しさ</li>
+          </ul>
+        </div>
+      </div>
+      <div class="guide-note">
+        <h3>「手作り = 栄養不足」ではありません</h3>
+        <p>
+          よくある不安が「手作りだと栄養が偏るのでは？」というもの。<br/>
+          For wan のレシピは、<strong>AAFCO基準に基づいてペット管理栄養士が栄養設計</strong>しています。<br/>
+          タンパク質・脂質・ビタミン・ミネラルのバランスを計算した上でレシピを組んでいるので、<br/>
+          手作りでも安心して毎日のごはんにできます。
+        </p>
+      </div>
+      <div class="guide-steps">
+        <h3>For wan のごはんができるまで</h3>
+        <div class="steps-grid">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>食材を厳選</h4>
+              <p>旬のヒューマングレード食材をスーパーから仕入れ</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>栄養設計</h4>
+              <p>AAFCO基準に基づき、栄養士がレシピを設計</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>丁寧に調理</h4>
+              <p>人の食品と同じ衛生管理のもとで調理・加工</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>お届け</h4>
+              <p>できたての美味しさを、ご家庭の愛犬へ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  {posts.length > 0 && (
+    <section class="section section-alt" id="blog">
+      <h2 class="section-title">ブログ</h2>
+      <p class="section-subtitle">犬の食事と健康に関する情報をお届け</p>
+      <div class="blog-grid container">
+        {posts.map(post => (
+          <a href={`/blog/${post.id}/`} class="blog-card">
+            <div class="blog-card-body">
+              <p class="blog-card-date">{formatDate(post.data.date)}</p>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="/blog" class="btn-primary">ブログ一覧を見る</a>
+      </div>
+    </section>
+  )}
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <h2 class="section-title">お問い合わせ</h2>
+    <p class="section-subtitle">お気軽にご連絡ください</p>
+    <div class="contact-box">
+      <p>商品に関するご質問、コラボレーションのご相談など、<br/>お気軽にお問い合わせください。</p>
+      <div class="contact-methods">
+        <a href="mailto:contact@for-wan.com" class="contact-link">
+          &#x2709;&#xFE0F; メールでお問い合わせ
+        </a>
+        <a href="https://instagram.com/for_wan" class="contact-link" target="_blank" rel="noopener">
+          &#x1F4F7; Instagram (@for_wan)
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
